@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>구구단 특정 출력</title>
+    </head>
+    <body>
+        <script>           
+            // prompt로 구구단의 단수를 입력 받아
+            // 그 단만 출력하는 반복문
+
+            // 변수 선언 초기화
+            let gugu = 0;
+            let msg = '';
+            let input_number = '';
+            
+            // 입력
+            input_number = prompt("단을 입력하세요");  
+            gugu = parseInt(input_number);          // 정수 변환
+
+            // 처리
+            if(isNaN(gugu)){
+                console.log("숫자를 입력하세요");
+            } 
+            else if((gugu < 1) || (gugu > 10)){
+                console.log("1부터 9까지의 숫자만 입력하세요");
+            }
+            else {
+                for(let i=1; i<10; i++){
+                    msg += gugu + " * " + i + " = " + gugu*i + "\n";
+                }
+            // 출력
+                console.log(msg);
+            }
+        </script>
+    </body>
+</html>

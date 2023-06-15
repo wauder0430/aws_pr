@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>구구단</title>
+    </head>
+    <body style="background-color: silver;">
+        <script>
+            // 화면에 select option으로 단을 선택한다.
+            function show(){
+                // 선택된 단을 받아온다.
+                // let dan = document.querySelector("#sel_dan");
+                // dan = document.gugu.sel_dan;
+                dan = document.getElementById(("sel_dan")).value;
+                let table_HTML ="";
+                // 단이 선택되면, 그 단의 구구단을 HTML로 작성한다.
+                for(let i=1; i<10; i++){
+                    // table_HTML += "<tr>"
+                    // table_HTML += "<td>" + dan + "</td>";
+                    // table_HTML += "<td>x</td>";
+                    // table_HTML += "<td>" + i + "</td>";
+                    // table_HTML += "<td>=</td>";
+                    // table_HTML += "<td>" + (dan*i) + "</td>";
+                    // table_HTML += "</tr>";
+                    // 템플릿 리터럴
+                    table_HTML += `<tr>
+                    <td>${dan}</td>
+                    <td>x</td>
+                    <td>${i}</td>
+                    <td>=</td>
+                    <td>${(dan*i)}</td>
+                    </tr>`;
+                }
+                // 만들어진 table 태그를 화면에 표시한다.
+                newTable = document.createElement("table");
+                newTable.setAttribute("border","1");
+                newTable.setAttribute("width","200px");
+                newTable.innerHTML = table_HTML;
+                show_area.appendChild(newTable);
+            }
+            // 삭제 버튼을 누르면, 화면 표시 영역에 '자식객체'가 있는지 확인하고
+            // 가장 마지막 객체를 삭제한다.
+            function del(){
+                // show_area의 자식 객체 -> node가 존재하는지 체크 
+                // 마지막 자식 노드를 삭제
+                
+                if(show_area.hasChildNodes()){
+                    show_area.lastChild.remove();
+                }else{
+                    return;
+                }
+            }
+        </script>
+        <form name="gugu" method="get" action="#" id="gugu">
+            <select name="dan" id="sel_dan">
+                <option value="2">2단</option>
+                <option value="3">3단</option>
+                <option value="4">4단</option>
+                <option value="5">5단</option>
+                <option value="6">6단</option>
+                <option value="7">7단</option>
+                <option value="8">8단</option>
+                <option value="9">9단</option>
+            </select>
+            <br>
+            <input type="button" value="show" onclick="show();">
+            <input type="button" value="del" onclick="del();">
+        </form>
+        <div id="show_area" style="background-color: white;">
+        </div>
+    </body>
+</html>

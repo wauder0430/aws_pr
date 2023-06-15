@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 반복문 구구단</title>
+    </head>
+    <body>
+        <script>
+            // 코드 작성의 기본 구조
+
+            // 초기화
+            // 사용할 변수들을 선언하고, 값을 할당함
+
+            // 입력
+
+            // 처리
+
+            // 출력
+
+            // 초기화
+            // 숫자 x 숫자 = 숫자
+            let dan = '';
+            let result = 0;
+
+            // 2~9단까지
+            for(let i=1; i<=9; i++){
+                // 각 행의 계산값
+                result = 2*i;
+                // 출력용 문자열을 생성
+                dan += "2 x " + i + "= " + result + "\n";
+                  
+            }
+            //출력부
+            console.log(dan);  
+            
+            // 첫번째 for문은 j 2~9까지 반복을 하고
+            // 각 j의 값에서 i는 1~9까지 반복을 시행
+            // 초기화
+            dan = '';
+            // 처리부
+            for(let i=2; i<=9; i++){
+                dan += "-------------\n";
+                for(let j=1; j<=9; j++){
+                    result = i*j;
+                    dan += i + " x " + j + " = " +result + "\n";
+                    
+                    console.log("i : " + i);
+                    console.log("j : " + j);
+                }
+            }
+            // 초기화
+            console.log(dan);
+            
+            // while문의 중첩으로 구구단 작성
+            let x = 2;
+            
+            while(x<10){
+                let y = 1;
+                while(y<10){
+                    console.log(x + " * " + y + " = " + (x*y));
+                    y++;
+                }
+                x++;
+                console.log("-----------\n");
+            }
+
+            
+        </script>
+    </body>
+</html>

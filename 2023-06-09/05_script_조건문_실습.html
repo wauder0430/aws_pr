@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 조건문 실습</title>
+    </head>
+    <body>
+        <script>
+            /*
+            주사위는 눈은 1부터 6 범위값을 갖는다.
+            특정 정수를 발생시키고, 그 정수를 6으로 나눈 나머지를 구하면
+            0~5의 범위값을 갖는다.
+            이 나머지에 1을 더하여 주사위를 만든다.
+            */
+
+            let rnd = Math.random() * 100;
+            rnd = parseInt(rnd);
+            rnd %= 6;
+            let dice = rnd + 1;
+
+            // let dice = (Math.floor(Math.random() * 100)) % 6 + 1;
+
+            if(dice == 1){
+                console.log("주사위가 1입니다.");
+            }
+            else if(dice == 2){+
+                console.log("주사위가 2입니다.");
+            }
+            else if(dice == 3){
+                console.log("주사위가 3입니다.");
+            }
+            else if(dice == 4){
+                console.log("주사위가 4입니다.");
+            }
+            else if(dice == 5){
+                console.log("주사위가 5입니다.");
+            }
+            else if(dice == 6){
+                console.log("주사위가 6입니다.");
+            }
+            else {
+                console.log("주사위 값이 올바르지 않습니다.");
+            }
+        </script>
+    </body>
+</html>

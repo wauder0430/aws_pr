@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 변수 실습</title>
+    </head>
+    <body>
+        <script>
+            // 반지름이 r인 원의 둘레을 구하시오
+            let r = 10;
+            // 원의 둘레 구하는 공식 2*PI*r
+            const PI = 3.14;
+            console.log("반지름이 " + r + "인 원의 둘레는 " + (2*PI*r) 
+            +" 입니다.");
+            // 원의 넓이 공식 PI*r^2
+            console.log("반지름이 " + r + "인 원의 넓이는 " + (PI*r*r) 
+            +" 입니다.");
+            console.log(0.1+0.2);
+            console.log(0.1+0.3);
+            console.log(0.1+0.7);
+            console.log(0.1+0.4);
+            console.log(0.2+0.7);
+            console.log(999999999999999);
+            console.log(9_123_123_123_123);
+            // Math 
+            // 반올림   .round()
+            // 올림     .ceil()
+            // 내림     .floor()
+            console.log("반올림");
+            console.log(Math.round(123.123123));
+            console.log(Math.round(123.612123));
+            console.log("올림");
+            console.log(Math.ceil(123.123123));
+            console.log("내림");
+            console.log(Math.floor(123.123123));
+            //특정 자리수 반올림 Number.toFixed(자리수)
+            console.log("소수점 세자리에서 반올림");
+            let va = 123.123567;
+            console.log(va.toFixed(3));
+            // .toLocaleString(국가코드);
+            const float = 123_123_123.123123123;
+            console.log(float);
+            console.log(float.toLocaleString('ko-KR'));
+            const opt = { maximumFractionDigits : 9 };
+            console.log(float.toLocaleString('ko-KR', opt));
+
+
+        </script>
+    </body>
+</html>

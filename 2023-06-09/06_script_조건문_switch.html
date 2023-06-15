@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 조건문 switch</title>
+    </head>
+    <body>
+        <script>
+            /*
+            switch-case 의 구조
+            switch(변수){
+                case '경우의 값' : 
+                    수행할 내용
+                    break;        
+                case '경우의 값' : 
+                    수행할 내용
+                    break;
+                case '경우의 값' : 
+                    수행할 내용
+                    break;
+                case '경우의 값' : 
+                    수행할 내용
+                    break;
+                default : 
+                    수행할 내용
+            }
+            */
+            
+            let rnd = Math.random() * 100;
+            rnd = parseInt(rnd);
+            rnd %= 6;
+            let dice = rnd + 1;
+
+            switch(dice){
+                case 1 :
+                    console.log("주사위가 1입니다.");
+                    break;
+                case 2 :
+                    console.log("주사위가 2입니다.");
+                    break;
+                case 3 :
+                    console.log("주사위가 3입니다.");
+                    break;
+                case 4 :
+                    console.log("주사위가 4입니다.");
+                    break;
+                case 5 :
+                    console.log("주사위가 5입니다.");
+                    break;
+                case 6 :
+                    console.log("주사위가 6입니다.");
+                    break;
+                default :
+                    console.log("주사위 값이 올바르지 않습니다.");
+            }
+
+            // let grade 변수에 1위, 2위, 3위 기타 값을 넣고
+            // switch-case 문을 이용해서
+            // 1위는 금메달 2위는 은메달 3위는 동메달 나머지 경우는 입상
+
+            let grade = "1위";
+            let msg_text = " ";
+            switch(grade){
+                case "1위" :
+                    msg_text =  "금메달";
+                    break;
+                case "2위" :
+                    msg_text = "은메달";
+                    break;
+                case "3위" :
+                    msg_text = "동메달";
+                    break;
+                default :
+                    msg_text = "입상";
+            }
+            console.log(msg_text);
+
+            // 성적 등급이 A,B,c인 경우는 수료로 취급하고 D와 그 이외는 미수료 처리
+            grade = "A";
+            switch(grade){
+                case "A" :  
+                case "B" :
+                case "C" :
+                    msg_text = "수료";
+                    break;
+                default :
+                    msg_text = "미수료";
+            }
+            console.log(msg_text);
+
+            // let gender "M", "F"  --> '남성입니다.' '여성입니다' '데이터 오류입니다.'
+            let gender = "M";
+            switch(gender){
+                case "M" :
+                    msg_text = "남성입니다.";
+                    break;  
+                case "F" :
+                    msg_text = "여성입니다.";
+                    break;
+                default :
+                    msg_text = "데이터 오류입니다.";
+            }
+            console.log(msg_text);
+            
+            // let u_type 'U' : '일반유저' 'A' : '관리자' 'R' : '탈퇴회원' 
+            let u_type = "U";
+            switch(u_type){
+                case "U" :
+                    msg_text = "일반유저";
+                    break;  
+                case "A" :
+                    msg_text = "관리자";
+                    break;
+                case "R":
+                    msg_text = "탈퇴회원";
+                    break;
+                default :
+                    msg_text = "데이터 오류입니다.";
+            }
+            console.log(msg_text);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>반복문을 이용한 별찍기</title>
+    </head>
+    <body>
+        <script>
+            for(let i=1; i<=10; i++){
+                let star = ' ';
+                for(let j=1; j<=i; j++){
+                    star += '*';
+                }
+                console.log(star);
+            }
+            
+
+            console.log("-----------------");
+            // 삼각형의 줄 수를 저장할 변수
+            let max = 0;
+            // 삼각형의 줄 수를 입력받음
+            let input_number = prompt("줄 갯수를 입력하세요");
+            // 문자열 정수 변환
+            max = parseInt(input_number);
+
+            for(let i=max; i>=1; i--){
+
+                star = '';
+                // 빈칸
+                for(let j=1; j<i; j++){
+                    star += ' ';
+                }
+                // 별
+                for(let k=max; k>i-1; k--){
+                    star += '*';
+                }
+                console.log(star);
+            }
+            
+            
+        </script>
+    </body>
+</html>

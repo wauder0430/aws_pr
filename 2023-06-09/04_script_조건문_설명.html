@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 조건문 설명</title>
+    </head>
+    <body>
+        <script>
+            /*
+            만약(조건식) 조건식이 참일 경우에 실행할 내용
+            만약(조건식) 참일 경우 / 거짓일 경우
+            if(조건식) { 참일 경우 }
+            if(조건식) { 참일 경우 } else { 거짓일 경우 }
+            if(조건식1) { 
+                조건식1이 참일 경우 
+            }
+            else if(조건식2) { 
+                조건식 2가 참일 경우 
+            }
+            else { 
+                조건식 2가 거짓일 경우 
+            }
+            */
+
+            if(true) {
+                console.log("참입니다.");
+            }
+
+            let x = 10;
+
+            if(x < 10) {
+                console.log("x는 10 미만입니다.");
+            }
+            else { 
+                console.log("x는 10 이상입니다.")
+            }
+
+            let flag = false;
+            x = 5;
+            flag = ( x < 10);
+            if(flag) {
+                console.log("x는 10 미만입니다.");
+            }
+            else { 
+                console.log("x는 10 이상입니다.")
+            }
+
+            if(flag) {
+                console.log("flag가 true입니다");
+            }
+            else { 
+                console.log("flag가 false입니다.")
+            }
+            
+            // if-else if-else
+            // age에 입력된 나이로 
+            // 10살 미만이면 '아동입니다.'
+            // 20살 미만이면 '미성년자입니다.'
+            // 그 이외에는 '성인입니다.'
+
+            let age = 25;
+
+            if(age < 10) {
+                console.log("아동입니다.");
+            }else if(age < 20) {
+                console.log("미성년자입니다.");
+            }else {
+                console.log("성인입니다.");            
+            }
+
+            if(age > 0 && age < 10) {
+                console.log("아동입니다.");
+            }else if(age >= 10 &&age < 20) {
+                console.log("미성년자입니다.");
+            }else if (age >= 20){
+                console.log("성인입니다.");            
+            }else {
+                console.log("나이가 정확한 값이 아닙니다.");
+            }
+
+            // let score 점수를 받고 
+            // 90점 이상 a학점
+            // 80점 이상은 b학점
+            // 70점 이상은 c학점
+            // 70점 미만은 재수강하세요
+            
+            let score = 70;
+
+            if(score >= 90){
+                console.log("A");
+            }
+            else if(score >= 80 && score <90){
+                console.log("B");
+            }
+            else if(score >=70 && score <80){
+                console.log("C");
+            }
+            else if(score >= 0 && score <70){
+                console.log("재수강하세요");
+            }
+            else {
+                console.log("error");
+            }
+
+
+        </script>
+    </body>
+</html>

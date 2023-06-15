@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>테이블 연습</title>
+    </head>
+    <body>
+        <!--<table border="1">
+            <tr>
+                <td>table</td>
+                <td>1st</td>
+            </tr>
+            <tr>
+                <td>2nd</td>
+                <td></td>
+            </tr>
+        </table>-->
+        <table border="1" style="width: 400px;">
+        <!--<table style="border-style:solid; width:200px; border-spacing:0;">-->
+            <!--style=""-->
+            <!--속성명:속성값; 속성명:속성값;-->
+
+            <!--숫자는 오른쪽 정렬
+                성명이나 일반 항목같은 경우 가운데-->
+
+            <caption>5층 강의실 강의 현황</caption>
+            <thead>
+                <!--행의 높이 설정-->
+                <tr height="50px;">
+                    <th>시간</th>
+                    <!--행의 너비 설정-->
+                    <th width="150px;">501호</th>
+                    <th width="150px;">502호</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="3" align="center">이젠it아카데미</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td align="center">오전</td>
+                    <td>AWS</td>
+                    <td>React</td>
+                </tr>
+                <tr>
+                    <td align="center">오후</td>
+                    <td>전산회계</td>
+                    <td>React</td>
+                </tr>
+            </tbody>
+            
+        </table>
+        <br>
+        <table border="1" style="border-spacing:0;">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th align="center">제목</th>
+                    <th align="center" width="150px">저자</th>
+                </tr>
+            </thead>
+            <tfoot></tfoot>
+            <tbody>
+                <tr>
+                    <td>명품 HTML+CSS3+JS 웹프로그래밍</td>
+                    <td align="center">황기태</td>
+                   
+                   
+                </tr>
+                <tr>
+                    <td>이것이 자바다</td>
+                    <td align="center">신용권</td>
+                </tr>
+                <tr>
+                    <td>Must Have 성낙현의 JSP 자바 웹 프로그래밍</td>
+                    <td align="center">성낙현</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table border="1" style="border-spacing:0;">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th width="40px">번호</th>
+                    <th width="200px">제목</th>
+                    <th width="70px">작성자</th>
+                    <th width="100px">작성일</th>
+                    <th>조회수</th>
+                </tr>
+            </thead>
+            <tfoot></tfoot>
+            <tbody>
+                <tr>
+                    <td align="right">1</td>
+                    <td>첫번째 게시글</td>
+                    <td align="center">홍길동</td>
+                    <td align="center">2023-05-30</td>
+                    <td align="right">10</td>
+                </tr>
+                <tr>
+                    <td align="right">2</td>
+                    <td>JAVA 수업 알림</td>
+                    <td align="center">전우치</td>
+                    <td align="center">2023-05-31</td>
+                    <td align="right">5</td>
+                </tr>
+                <tr>
+                    <td align="right">3</td>
+                    <td>HTML 학습 자료</td>
+                    <td align="center">임꺽정</td>
+                    <td align="center">2023-06-01</td>
+                    <td align="right">1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <table border="1">
+            <tr>
+                <td>첫번째칸</td>
+                <td>두번째칸</td>
+            </tr>
+            <tr>
+                <td>빈칸</td>
+                <td>
+                    <table border="1" style="border-spacing:0;">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th width="40px">번호</th>
+                                <th width="200px">제목</th>
+                                <th width="70px">작성자</th>
+                                <th width="100px">작성일</th>
+                                <th>조회수</th>
+                            </tr>
+                        </thead>
+                        <tfoot></tfoot>
+                        <tbody>
+                            <tr>
+                                <td align="right">1</td>
+                                <td>첫번째 게시글</td>
+                                <td align="center">홍길동</td>
+                                <td align="center">2023-05-30</td>
+                                <td align="right">10</td>
+                            </tr>
+                            <tr>
+                                <td align="right">2</td>
+                                <td>JAVA 수업 알림</td>
+                                <td align="center">전우치</td>
+                                <td align="center">2023-05-31</td>
+                                <td align="right">5</td>
+                            </tr>
+                            <tr>
+                                <td align="right">3</td>
+                                <td>HTML 학습 자료</td>
+                                <td align="center">임꺽정</td>
+                                <td align="center">2023-06-01</td>
+                                <td align="right">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

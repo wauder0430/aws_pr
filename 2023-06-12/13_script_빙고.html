@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>빙고 게임</title>
+    </head>
+    <body>
+        <script>           
+            // [0] 초기화 : 사용할 변수를 선언한다.
+            let answer   = 0;       // 게임의 정답
+            let MAX_Life = 0;       // 게임의 최대 기회
+            let life     = 0;       // 게임의 남은 기회
+            let User_Key = 0;       // 사용자의 입력받은 값
+            let flag     = false;   // 정답을 맞췄는지 체크
+
+            // [1] 입력 : 사용자한테 입력을 받는다. + 값 세팅
+            do{
+                MAX_Life = parseInt(prompt("게임 난이도를 선택하세요 [3~10] :"));
+            }while((isNaN(MAX_Life)) || (MAX_Life<3) || (MAX_Life>10));
+            console.log("입력받은 난이도 : " + MAX_Life);
+            // 정답은 1~100사이의 정수로 생성
+            answer = parseInt((Math.random() * 99) + 1);
+            console.log("생성된 정답 : " + answer);
+            
+            life = MAX_Life;
+
+            // [2] 처리 : 지정된 횟수만큼 게임을 반복한다.
+            // [3] 출력 : 정답을 맞춘 경우  
+            for(let i=0; i<MAX_Life; i++){
+                //남은 기회가 0번이면 실패이므로 break로 나감
+                if(life < 1){
+                    console.log("모든 기회를 소진하였습니다.");
+                    break;
+                };
+                // 사용자에게 생각하는 답을 입력받는다
+                User_Key = parseInt(prompt("정답을 입력하세요 : "));
+                // 입력받은 값과 정답을 비교한다
+                if((isNaN(User_Key)) || (User_Key<0) || (User_Key>100)){
+                    console.log("숫자를 입력하세요");
+                    i--;
+                    continue;
+                } else{
+                    console.log("입력받은 정답: " + User_Key);
+                    life--;         // 기회 소진
+                    console.log("남은 기회 : " + life);
+                }
+
+                // 정답이 더 크면 UP을 출력
+                // 정답이 저 작으면 DOWN을 출력
+                // 정답을 맞췄으면 'Bingo!!!'를 출력하고,flag를 true로 변경 후 반복문을 종료
+                if(User_Key > answer){
+                    console.log("DOWN");
+                }
+                else if(User_Key < answer){
+                    console.log("UP");
+                }
+                else{
+                    console.log("Bingo!");
+                    flag = true;
+                    break;
+                }
+                
+            }
+            
+            // flag를 체크해서 t : 정답 f : 바보 출력
+            if(flag==false){
+                console.log("바보~");
+            }
+            console.log("정답: "+answer);
+            // 정답이 맞지 않으면 게임을 반복
+            
+        </script>
+    </body>
+</html>

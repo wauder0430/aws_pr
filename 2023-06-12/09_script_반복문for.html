@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 반복문 for</title>
+    </head>
+    <body>
+        <script>
+            /*
+            for(초기화; 조건식; 증감식){
+                반복할 로직
+            }
+            */
+            // let i = 100;
+            // var j = 100;
+
+            // for(let i=0; i<=10; i++){
+                
+            //     let j = 20;
+
+            //     console.log("i :" + i);
+            //     // for문 내부에서 var를 통해 재선언을 했기에, this 키워드로
+            //     // j를 접근할 수 없음
+            //     console.log("for문 밖의 j:" + this.j);
+            //     // for문 내부에서 var를 통해 재선언한 j
+            //     console.log("for문 안의 j:" + j);
+            // }
+            // let number = 100;
+            // for(let i=number; i<=10; i++){
+                
+            // }
+            let sum =0;
+            for( let i=0; i<=10; i++){
+                
+                // let x = 0;
+                // var y = 0;
+                sum += i;
+                //console.log("i : " + i + "\nsum: " + sum);
+                // x += 1;
+                // y += 1;
+                console.log("sum : " + sum);
+                // console.log("x : " + x);
+                // console.log("y : " + y);
+                // console.log("i : " + i);
+                
+            }
+            console.log("sum : " + sum);
+            // console.log("i : " + i);
+            // console.log("x : " + x);
+            // console.log("y : " + y);
+            
+            // 변수 선언 및 초기화
+            let MAX = 10;
+            let MIN = 0;
+            sum = 0;
+            for(let i = MAX; i>MIN; i--){
+                console.log("i : " + i);
+                sum += i;
+            }
+            console.log("sum : " + sum);
+
+            // 0부터 20가지 2씩 증가하며 반복되는 for문
+            for(let i=0; i<=20; i+=2){
+                console.log(i);
+            }
+
+            sum = 0; 
+            // 반복문을 이용해서 1에서 100까지의 정수를
+
+            let sum_odd = 0;
+            let sum_even = 0;
+            // 1. 모두 더하는 for문
+            for(let i=0; i<=100; i++){
+                sum += i;
+            }
+            console.log(sum);
+
+            // 2. 홀수만 더해서 sum_odd 에 넣는 for문
+            for(let i=1; i<=100; i+=2){
+                sum_odd += i;
+            }
+            console.log(sum_odd);
+
+             // 3. 짝수만 더해서 sum_even 에 넣는 for문
+            for(let i=2; i<=100; i+=2){
+                sum_even += i;
+            }
+            console.log(sum_even);
+
+            // 4. if 문으로 홀짝을 판별하여 sum_odd와 sum_even에 넣는 for문
+            sum_odd = 0;
+            sum_even = 0;
+            for(let i=1; i<=100; i++){
+                console.log("i : " + i);
+                if(i%2 == 0){
+                    console.log("i가 짝수입니다.");
+                    sum_even += i;
+                }else{
+                    console.log("i가 홀수입니다.");
+                    sum_odd += i;
+                }
+            }
+            console.log(sum_odd);
+            console.log(sum_even);
+
+            //
+            
+        </script>
+    </body>
+</html>

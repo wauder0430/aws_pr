@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 변수 설명</title>
+    </head>
+    <body>
+        <script>
+            //변수의 선언
+            // a = 1;
+            //변수 이름 = 값;
+            var a;
+            let b;
+            //변수의 선언과 할당
+            var x = 1;
+            let y = 2;
+            //const 상수 : 값이 변하지 않는 변수
+            const z = 3;
+            //변수에 할당된 값 호출
+            console.log("----------------------------");
+            console.log("변수 a : " + a);
+            console.log("변수 b : " + b);
+            console.log("변수 x : " + x);
+            console.log("변수 y : " + y);
+            console.log("변수 z : " + z);     
+            //변수의 값을 재할당 
+            a = null;
+            b = 2;
+            x = 3;
+            y = 4;
+            //z = 5; const로 선언된 변수는 값을 변경할 수 없음 
+            //변수에 할당된 값 호출
+            console.log("----------------------------");
+            console.log("변수 a : " + a);
+            console.log("변수 b : " + b);
+            console.log("변수 x : " + x);
+            console.log("변수 y : " + y);
+            console.log("변수 z : " + z);   
+            
+            //var는 같은 이름으로 변수를 재선언 할 수 있다.
+            console.log("----------------------------");
+            console.log("변수 a : " + a);
+            var a ="문자열";
+            //let b ="문자열"; let은 같은 이름으로 재선언 할 수 없다.
+            console.log("변수 a 재선언");
+            console.log("변수 a : " + a);
+
+            // 리터럴
+            console.log("----------------------------");
+            var str = "문자 리터럴";
+            console.log("\"\" 사용\nstr : " + str);
+            var str = '문자 리터럴';
+            console.log("'' 사용\nstr : " + str);
+            var str = `문자 리터럴`;
+            console.log("`` 사용\nstr : " + str);
+            var str = `문자 리터럴`;
+            console.log(`백틱 사용\nstr : ${str}`); //변수를 중간에 사용하기 위해 backtick사용`
+            var str = 1;
+            console.log("변수 a : " +str);
+            var str = true;
+            console.log("변수 a : " +str);
+
+            //변수의 형태
+            //undefined
+            var variable;
+            console.log(typeof(variable));
+            //number
+            variable = 123;
+            console.log(typeof(variable));
+            //NaN
+            variable = Number.NaN;
+            console.log(typeof(variable));
+            // String
+            variable = '123';
+            console.log(typeof(variable));
+            // boolean
+            variable = false;
+            console.log(typeof(variable));
+            // null
+            variable = null;
+            console.log(typeof(variable));
+            // NaN 체크
+            variable = Number.NaN;
+            console.log("변수의 값 : " + variable);
+            console.log("변수의 값이 NaN입니까? \n == : " + (variable == NaN));
+            console.log("변수의 값이 NaN입니까? \n === : " + (variable === NaN));
+            console.log("변수의 값이 NaN입니까? \n isNaN : " + isNaN(variable));
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>객체 생성</title>
+    </head>
+    <body>
+        <script>
+            //document.write("write 함수로 작성한 문장입니다.");
+            window.onload = function(){
+                // 문서의 객체를 찾음
+                let obj = document.getElementById("myDiv");
+                //obj.innerText = "객체를 찾았습니다."
+                //obj.innerHTML = "<p>html 태그를 추가했습니다.</p>"
+                
+                // 새로운 객체를 생성
+                newP = document.createElement("p");
+                // 새로운 객체의 내용을 넣음
+                newP.innerText = "새로 생성된 객체입니다."
+                // 다른 객체의 자식으로 더함
+                obj.appendChild(newP);
+                obj = document.getElementById("divX");
+                //obj.appendChild(newP);
+                obj.innerHTML = "<p>innerHTML로 넣은 객체입니다.</p>";
+            }    
+        </script>
+        <div id="myDiv"style="background-color: silver;"></div>
+        <div id="divX" style="background-color: beige;">X</div>
+        <div id="divY" style="background-color: aqua;">Y</div>
+    </body>
+</html>

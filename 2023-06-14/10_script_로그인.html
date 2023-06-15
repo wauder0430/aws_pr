@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>로그인</title>
+        <style>
+            input:focus{
+                background-color : silver;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            // 아이디 입력창에 포커스
+            window.onload = function(){
+                let obj_id = document.getElementById("id");
+                obj_id.focus();
+
+                // 이벤트 리스너 작성
+                obj_id.onkeydown = function(){
+                    delChild();
+                }
+                let obj_pw = document.getElementById("pw");
+                obj_pw.onkeydown = function(){
+                    delChild();
+                }
+            }
+            // 경고문이 뜨지 계속뜨지 않게 remove하는 함수
+            function delChild(){
+                    // 자식 노드가 존재하는지 확인 후 remove
+                    // let myD = document.querySelector("#myDiv")
+                    // 이걸 hasChildNodes로도 if문 작성 가능
+                    // 그후 myD.children[0].remove
+                    if(document.querySelector("#myDiv").children[0]){
+                        document.querySelector("#myDiv").children[0].remove();
+                    }
+                }
+            // 로그인 id pw가 입력됐는지 확인
+            function CheckValue(id,pw){
+                // 경고문을 계속 띄어주지 않기 위한 함수 호출 (자식노드가 이미 존재하면 remove)
+                delChild();
+                // 메시지를 띄우기위한 div
+                let obj = document.getElementById("myDiv");
+                newMsg = document.createElement("p");
+                // id가 없으면 포커스 후 text메시지를 생성후 div의 자식노드로 붙여줌
+                if(id.value == ""){
+                    id.focus();
+                    newMsg.innerText = "아이디를 입력하세요.";
+                    newMsg.style.color = "red";
+                    obj.appendChild(newMsg);
+                    return false;
+                }
+                // 비번이 없으면 포커스 후 text메시지를 생성후 div의 자식노드로 붙여줌
+                if(pw.value == ""){
+                    pw.focus();
+                    newMsg.innerText = "비밀번호를 입력하세요.";
+                    newMsg.style.color = "red";
+                    obj.appendChild(newMsg);
+                    return false;
+                }
+                return true;
+            }  
+            // 로그인 로직 
+            function DoLog(){
+                let id = document.getElementById("id");
+                let pw = document.getElementById("pw");
+                if(!CheckValue(id,pw)){
+                     return;
+                }
+                alert("로그인합니다.");
+            }
+            
+        </script>
+        <!-- form에 onsubmit 이벤트로 함수를 호출하고 그 반환값이 true이면 submit을 진행하고, false이면 중단시킬 수 있음 -->
+        <form name="login" id="login" method="post" action="login.html" onsubmit="return DoLog();">
+            <p>아이디 : <input type="text" id="id"></p>
+            <p>비 번 : <input type="password" id="pw"></p>
+            <!-- 입력값이 없을 경우 메시지(경고문)을 띄어주기 위한 div -->
+            <!-- style="color:red;" -->
+            <div id="myDiv"></div>
+            <input type="button" onclick="javascript:DoLog()" value="로그인">
+            <input type="reset" value="취소" onclick="javascript:delChild()">
+        </form> 
+    </body>
+</html>

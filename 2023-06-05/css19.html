@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>overflow</title>
+        <style>
+            p {
+                width: 15em;
+                height:3em;
+                border:1px solid black;
+                background-color: aqua;
+            }
+            .hidden { overflow: hidden; } 
+            .visible { overflow: visible; }
+            .scroll { overflow: scroll; }
+            .auto { overflow: auto; }
+        </style>
+    </head>
+    <body>
+        <p class="hidden">overflow의 값 : hidden
+            본문이 박스를 넘어갈 경우에 어떻게 되는지 확인해봅시다.
+        </p>
+        <p class="visible">overflow의 값 : visible
+            본문이 박스를 넘어갈 경우에 어떻게 되는지 확인해봅시다.
+        </p>
+        <p class="scroll">overflow의 값 : scroll
+            본문이 박스를 넘어갈 경우에 어떻게 되는지 확인해봅시다.
+        </p>
+        <p class="auto">overflow의 값 : auto
+            본문이 박스를 넘어갈 경우에 어떻게 되는지 확인해봅시다.
+        </p>
+    </body>
+</html>

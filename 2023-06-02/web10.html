@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원가입</title>
+    </head>
+    <body>
+        <form action="">
+            <table border="0" style="width: 500px; margin: auto;">
+                <tr>
+                    <td>※ 회원가입</td>
+                </tr>
+            </table>
+            <br>
+            <table border="1" style="width: 500px; margin: auto;">
+                <tr>
+                    <td width="30%">아이디(*)</td>
+                    <td><input type="text" name="id"><br>아이디를 입력하세요</td>
+                </tr>
+                <tr>
+                    <td>비밀번호(*)</td>
+                    <td><input type="password" name="pw"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인(*)</td>
+                    <td><input type="password" name="pwcheck"></td>
+                </tr>
+                <tr>
+                    <td>이름(*)</td>
+                    <td><input type="text" size="40%" name="name"></td>
+                </tr>
+                <tr>
+                    <td>성별(*)</td>
+                    <td>
+                        <!--radio checkbox ... input에 이름표 설정 가능-->
+                        <!--<label>이름<input></label>-->
+                        <!--<label for="아이디">이름</label><input>-->
+                        <label><input type="radio" value="m" name="gender">남성</label> 
+                        <input type="radio" value="f" name="gender" id="female"><label for="female">여성</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                    <td>
+                        <select name="hb">
+                            <option value="01">낚시</option>
+                            <option value="02">여행</option>
+                            <option value="03">사진</option>
+                            <option value="04">영화</option>
+                            <option value="05">음악</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>관심분야</td>
+                    <td>
+                        <label><input type="checkbox" value="1" name="inter">독서</label>
+                        <label><input type="checkbox" value="1" name="inter">영화</label>
+                        <label><input type="checkbox" value="1" name="inter">유튜브</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <button type="submit">가입완료</button>
+                        <button type="reset">취소</button>
+                    </td>
+                </tr>
+            </table>
+        </form> 
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 연산자 설명</title>
+    </head>
+    <body>
+        <script>
+            //기본 연산자(산술 연산자)
+            console.log("-----------------------");
+            var x = 1 + 2;
+            console.log(x);
+            console.log('1 + 2 더하기 : ' + (1 + 2));
+            console.log('1 - 2 빼기 : ' + (1 - 2));
+            console.log('2 * 3 곱하기 : ' + (2 * 3));
+            console.log('3 / 2 나누기 : ' + (3 / 2));
+            console.log('10 % 3 나머지 : ' + (10 % 3));
+            
+            // 대입 연산자
+            // 좌변 = 우변 -> 우변의 값을 좌변의 변수에 할당한다.(대입)
+            let a = 10; 
+            a = a + 2;
+            console.log(a);
+            a += 2;
+            console.log(a);
+            a -= 2;
+            console.log(a);
+            a *= 2;
+            console.log(a);
+            a /= 2;
+            console.log(a);
+
+            //증감 연산자 
+            //변수 안에 있는 숫자를 1을 증가하거나, 1을 감소시키는 연산자
+
+            a = 10;
+            console.log("--------------------");
+            console.log("연산 전 a의 값 : " +a);
+            console.log("연산 a++ : " + (a++));
+            console.log("연산 후 a의 값 : " +a);
+            console.log("연산 ++a : " + (++a));
+            console.log("연산 후 a의 값 : " +a);
+            console.log("--------------------");
+            a = 10;
+            console.log("연산 전 a의 값 : " +a);
+            console.log("연산 a-- : " + (a--));
+            console.log("연산 후 a의 값 : " +a);
+            console.log("연산 --a : " + (--a));
+            console.log("연산 후 a의 값 : " +a);
+            
+            // 비교 연산자
+            // 좌변 < 우변 우변이 좌변보다 크면 true 작으면 false return
+            // > >= <= / == != ===(값과 변수타입이 같은가?)
+            // !  부정 not 
+            x = 1;
+            y = '1';
+            console.log("x == 1"   + " " +(x == 1));
+            console.log("y == '1'" + " " +(y == '1'));   
+            console.log("x == '1'" + " " +(x == '1'));
+            console.log("y == 1"   + " " +(y == 1));
+            console.log("x == y"   + " " +(x == y));
+            console.log("x === y"  + " " +(x === y));
+            console.log("-------------------");
+            x = 10;
+            y = 3;
+            console.log("x < y : " + (x < y));
+            console.log("x > y : " + (x > y));
+            console.log("x <= y : " + (x <= y));
+            console.log("x >= y : " + (x >= y));
+            console.log("x != y : " + (x != y));
+
+            // 논리연산
+            
+            // 좌변 &&(and) 우변 
+            // 좌변이 true이고 우변이 true이면 true
+            // 참 && 참 = 참
+            // 참 && 거짓 = 거짓
+            // 거짓 && 참 = 거짓
+            // 거짓 && 거짓 = 거짓
+
+            // 좌변 ||(or) 우변
+            // 한쪽이라도 true이면 true
+            // 거짓 or 거짓인 경우에만 false
+            
+            let score = 90;
+            let age = 20;
+            console.log((score>80) && (age<25));
+            // not 
+            console.log(!(score>80));
+
+            x = true;
+            y = false;
+            console.log("x && y : " + (x && y));
+            console.log("x || y : " + (x || y));
+            console.log("!x : " + (!x));
+
+            // 조건연산
+            // () ? :
+            // (조건식) ? 조건식이 참길 경우에 남길 값 : 조건식이 거짓일 경우 남길 값
+            console.log((score >= 60) ? 'pass' : 'fail');
+            x = 10;
+            y = 8;
+            let max = (x > y) ? x : y;
+            console.log(max);
+            let min = (x < y) ? x : y;
+            console.log(min);
+
+            // 문자열 연산
+            // 문자열 + 문자열 ->좌변의 문자열 뒤에 우변의 문자열 이어 붙임
+            // 문자열 + 숫자   ->숫자를 문자열로 변경 후 문자열을 합 연산
+            // 숫자 + 문자열   ->숫자를 문자열로 변경 후 문자열을 합 연산
+            //
+
+            x = 4;
+            y = 1;
+            console.log(x.toString(2));
+            console.log(x << 2);
+            y = x << 2;
+            console.log(y.toString(2));
+            //boolean에서 undefined false null " " 0 모두 false
+
+            // >>>
+            // 10진법 : 0~9 자리수가 증가할때마다 각 자리수*10
+            // 14 -> 1*10 + 4*1
+            // 2진법 : 0,1 자리수마다 *2
+            // 101 -> 1*2*2 +1
+            // 8진법 : 0~7 자리수마다 *8
+            // 16진법 : 0~9 A~F 각 자리수마다 *16
+            // #000000
+            // 1234123
+            // 0b // 0b00101011
+            // 0o // 
+            // 0x //
+            let i = 0b1101010;
+            let j = 0o1762434;
+            let k = 0x9a9d8c8f;
+            console.log(i + " / " + j + " / " + k);
+
+        </script>
+    </body>
+</html>

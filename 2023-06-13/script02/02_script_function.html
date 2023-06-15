@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>자바스크립트 함수</title>
+    </head>
+    <body>
+        <script>
+            function DoCal(){
+                // prompt로 숫자 두개와 연산자를 입력받음
+                // 값을 입력 받음
+                let a = parseInt(prompt("숫자 a를 입력하세요"));
+                let b = parseInt(prompt("숫자 b를 입력하세요"));
+                let op = prompt("연산자를 입력하세요[+,-,*,/]");
+                let result=0;
+                if(isNaN(a) || isNaN(b)){   // a와 b가 숫자가 아닌 경우
+                    return; // 아무것도 반환하지 않고 함수를 종료함
+                }
+                // 숫자와 연산자가 입력되었으면 연산을 수행한다
+                switch(op){
+                case '+' : 
+                    //result = a + b;
+                    result = a+b;
+                    break; 
+                case '-' :
+                    //result = a - b;
+                    result = a-b;
+                    break;
+                case '*' :
+                    //result = a * b;
+                    result = a*b;
+                    break;
+                case '/' :
+                    //result = a / b;
+                    result = a/b;
+                    break;
+                default :
+                    console.log("연산자를 잘못입력하셨습니다.");
+                }
+                // 연산된 값 반환
+                return result;
+                
+            }
+            /* 
+            함수의 호출
+            함수명();
+            함수명(입력값(인자값,매개변수));
+
+            함수의 선언 
+            함수 선언 키워드 / 함수 이름 / (매개변수의 나열) / 
+            {
+                비지니스 로직
+                결과값의 반환
+            }
+            // a와 b를 입력받아 그 합을 반환하는 함수 add
+            function add(a,b){
+                return a+b;
+            }
+
+            */
+            //함수선언
+            /*
+            function add(a,b){
+                return a+b;
+            }
+            function sub(a,b){
+                return a-b;
+            }
+            function mul(a,b){
+                return a*b;
+            }
+            function div(a,b){
+                return a/b;
+            }
+            
+            //함수호출
+            //console.log(add(10,3));
+
+            switch(op){
+                case '+' : 
+                    //result = a + b;
+                    result = add(a,b);
+                    break; 
+                case '-' :
+                    //result = a - b;
+                    result = sub(a,b);
+                    break;
+                case '*' :
+                    //result = a * b;
+                    result = mul(a,b);
+                    break;
+                case '/' :
+                    //result = a / b;
+                    result = div(a,b);
+                    break;
+                default :
+                    console.log("연산자를 잘못입력하셨습니다.");            
+            }
+            */
+            
+            console.log(DoCal());
+            //console.log(add(a,b));
+
+        </script>
+    </body>
+</html>

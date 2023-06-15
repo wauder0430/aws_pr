@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>선택자 조합 연습</title>
+        <style>
+            /* p태그의 자식중에 class가 my_red인 것들을 찾음  */
+            /* p태그의 자식중에 class가 my_red인 녀석들은 찾음 */
+            
+            p > .my_red {
+                color:red;
+            }
+            /* p태그의 자손중에 class가 my_red인 녀석들은 찾음 */
+            p .my_red {
+                color : red;
+                font-size: 30pt;
+            }
+            .my_red {
+                color:blue;
+                font-size:8pt;
+            }
+            /* span중에 (자식이나 자녀가 아닌 ) class가 my_red인 경우 */
+            span.my_red {
+                color:yellow;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <p>이것은 문단입니다.</p>
+        <!-- p의 자식이 아닌 자기 자신이 my_red이기 때문에 color : blue실행 -->
+        <p class="my_red">이것은 문단입니다.</p>
+        <p>
+            <span class="my_red">문단 안의 내용 1입니다.</span>
+            <span>문단 안의 내용 2입니다</span>
+        </p>
+        <div>
+            <span>div안의 span입니다.</span>
+            <span class="my_red">div 안의 span이고 클래스를 갖고 있습니다.</span>
+        </div>
+
+        <p class="my_blue">이것도 문단입니다.</p>
+        <span class="my_red">이것은 문단 밖의 공간 분할 명령입니다.</span>
+        <span>이것은 문단 밖의 공간 분할 명령입니다.</span>
+
+
+        <h3>이것은 제목입니다.</h3>       
+        <a href="" class="btn red">버튼</a>
+        <p class="btn">버튼이 되나요?</p>
+        <table>
+            <tr>
+                <td>이것은 테이블입니다.</td>
+            </tr>
+        </table>
+    </body>
+</html>

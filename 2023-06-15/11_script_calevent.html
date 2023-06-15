@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>간단한 계산기</title>
+        <style>
+            input:focus{
+                background-color : lime;
+                border: 1px solid orangered;
+            }
+        </style>
+        <script>
+            window.onload = function(){
+                let obj = document.getElementById("X");
+                obj.focus();
+            } 
+
+            // X 혹은 Y값이 입력되지 않았으면, 그곳으로 커서 이동
+            function CheckValue(X,Y){
+                if(X.value == ""){
+                    X.focus();
+                    return false;
+
+                }
+                if(Y.value == ""){
+                    Y.focus();
+                    return false;
+                }
+                return true;
+            }              
+            function DoCal(){
+
+                // X,Y,OP 객체를 찾음
+                let X = document.getElementById("X");
+                let Y = document.getElementById("Y");
+                // X,Y에 입력값이 있는지 체크
+                if(!CheckValue(X,Y)){
+                    // 입력된 값이 없으면 DoCal을 종료
+                    return;
+                }
+                let xInt = parseInt(X.value);
+                let yInt = parseInt(Y.value);
+
+                // id가 X인 input 객체에 입력된 값을 가져옴
+                // let X = document.getElementById("X");
+                // console.log(X.value);
+                // ID X객체를 value값으로 가져오는데 int로 변환
+                //let X = parseInt(document.getElementById("X").value);                
+                // id가 Y인 input 객체에 입력된 값을 가져옴
+                //let Y = parseInt(document.getElementById("Y").value);
+                // id가 OP인 input 객체에 입력된 값을 가져옴
+                let OP = document.getElementById("OP").value;
+                // OP에 따라 연산을 수행함
+                let Z = 0;
+                switch(OP){
+                    case '+' :
+                        Z = xInt + yInt;
+                        break;
+                    case '-' :
+                        Z = xInt - yInt;
+                        break;
+                    case '*' :
+                        Z = xInt * yInt;
+                        break;
+                    case '/' :
+                        Z = xInt / yInt;
+                        break;
+                }
+                // id가 Z인 input 객체에 연산 결과를 보냄
+                document.getElementById("Z").value = Z;
+                save_log(xInt,yInt,OP,Z);
+            }
+            //로그를 기록하는 함수
+            function save_log(x,y,op,z){
+                //id가 log_box인 객체에 
+                //x op y = z를 innerText로 가진 자식 객체를 추가
+                let newLog = document.createElement("p");
+                newLog.innerText = `${x} ${op} ${y} = ${z}`;
+                document.querySelector("#log_box").appendChild(newLog);
+            } 
+            // 로그를 초기화하는 함수
+            function Clear(){
+                document.querySelector("#log_box").innerHTML = "";
+            }
+            // 정규식을 이용해서 숫자, 마침표, 쉼표만 입력되게 하는 함수
+            function RegExp(obj){
+                if(obj.value.length > 0){
+                    //console.log(obj.value.replace("0","-1"));
+                    //console.log(obj.value.slice("0","-1"));
+                    obj.value = obj.value.trim().replace(/[^0-9.]/g,"");
+                    obj.value = Number(obj.value).toLocaleString("ko-KR");
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="X" onkeyup="RegExp(this);">
+        <select name="OP" id="OP" onchange="DoCal();">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="Y" onkeyup="RegExp(this);">
+        <input type="button" value="=" onclick="javascript:DoCal();">
+        <input type="text" id="Z" readonly>
+        <input type="button" value="기록삭제" onclick="javascript:Clear();">
+        <div id="log_box"></div>
+    </body>
+</html>

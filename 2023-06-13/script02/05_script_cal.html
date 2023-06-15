@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>간단한 계산기</title>
+        <style>
+            input:focus{
+                background-color : lime;
+                border: 1px solid orangered;
+            }
+        </style>
+        <script>
+            // function DoCal(){
+
+            // // X,Y,OP 객체를 찾음
+
+            // // id가 X인 input 객체에 입력된 값을 가져옴
+            // // let X = document.getElementById("X");
+            // // console.log(X.value);
+            // // ID X객체를 value값으로 가져오는데 int로 변환
+            // let X = parseInt(document.getElementById("X").value);                
+            // // id가 Y인 input 객체에 입력된 값을 가져옴
+            // let Y = parseInt(document.getElementById("Y").value);
+            // // id가 OP인 input 객체에 입력된 값을 가져옴
+            // let OP = document.getElementById("OP").value;
+            // // OP에 따라 연산을 수행함
+            // let Z = 0;
+            // switch(OP){
+            //     case '+' :
+            //         Z = X + Y;
+            //         break;
+            //     case '-' :
+            //         Z = X - Y;
+            //         break;
+            //     case '*' :
+            //         Z = X * Y;
+            //         break;
+            //     case '/' :
+            //         Z = X / Y;
+            //         break;
+            // }
+            // // id가 Z인 input 객체에 연산 결과를 보냄
+            // document.getElementById("Z").value = Z;
+            // }
+            // 문서가 load되면, 입력폼에 커서를 이동
+            window.onload = function(){
+                let obj = document.getElementById("X");
+                obj.focus();
+            } 
+
+            // X 혹은 Y값이 입력되지 않았으면, 그곳으로 커서 이동
+            function CheckValue(X,Y){
+                if(X.value == ""){
+                    X.focus();
+                    return false;
+
+                }
+                if(Y.value == ""){
+                    Y.focus();
+                    return false;
+                }
+                return true;
+            }              
+            function DoCal(){
+
+                // X,Y,OP 객체를 찾음
+                let X = document.getElementById("X");
+                let Y = document.getElementById("Y");
+                // X,Y에 입력값이 있는지 체크
+                if(!CheckValue(X,Y)){
+                    // 입력된 값이 없으면 DoCal을 종료
+                    return;
+                }
+                let xInt = parseInt(X.value);
+                let yInt = parseInt(Y.value);
+
+                // id가 X인 input 객체에 입력된 값을 가져옴
+                // let X = document.getElementById("X");
+                // console.log(X.value);
+                // ID X객체를 value값으로 가져오는데 int로 변환
+                //let X = parseInt(document.getElementById("X").value);                
+                // id가 Y인 input 객체에 입력된 값을 가져옴
+                //let Y = parseInt(document.getElementById("Y").value);
+                // id가 OP인 input 객체에 입력된 값을 가져옴
+                let OP = document.getElementById("OP").value;
+                // OP에 따라 연산을 수행함
+                let Z = 0;
+                switch(OP){
+                    case '+' :
+                        Z = xInt + yInt;
+                        break;
+                    case '-' :
+                        Z = xInt - yInt;
+                        break;
+                    case '*' :
+                        Z = xInt * yInt;
+                        break;
+                    case '/' :
+                        Z = xInt / yInt;
+                        break;
+                }
+                // id가 Z인 input 객체에 연산 결과를 보냄
+                document.getElementById("Z").value = Z;
+            } 
+        </script>
+    </head>
+    <body>
+        <input type="text" id="X">
+        <select name="OP" id="OP">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" id="Y">
+        <input type="button" value="=" onclick="javascript:DoCal();">
+        <input type="text" id="Z" readonly>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>객체 삭제</title>
+    </head>
+    <body>
+        
+        <script>  
+            window.onload = function(){
+                // 삭제 : JS 객체의 삭제를 지원하지 않음
+                // JS 변수, 객체의 삭제를 프로그래머에게 허용하지 않음
+                // .remove()
+                // obj = document.querySelector("#divX");
+                // newDIV = document.createElement("p");
+                // newDIV.innerText = "생성한 객체입니다.";
+                // obj.appendChild(newDIV);
+            }
+            function delChild(){
+                //alert
+                // 부모 객체를 찾고, 부모 객체의 자식 객체들 중에 0번 인덱스로
+                // 자식 객체를 특정하여 remove()실행
+                document.querySelector("#divX").children[0].remove();
+                // obj = document.querySelector("#divX");
+                // console.log(obj.children);
+            }
+            // 생성된 버튼 갯수를 세는 변수
+
+            let count = 1;
+
+            function add(obj){
+                newBtn = document.createElement("div");
+                newBtn.innerHTML = "<input type='button' value='삭제" + count++ + "'onclick='del(this);'>";
+                obj.parentNode.appendChild(newBtn);
+            }
+            function del(obj){
+                // 삭제할 객체를 특정
+                // obj.remove()를 하게 되면 div게 남게되므로 부모노드를 remove하여 삭제 처리
+                obj.parentNode.remove();
+            }
+            </script>
+        <div id="divX" style="background-color:beige;">
+        <!-- <input type="button" onClick="delChild();" value="자식객체삭제"> -->
+            <input type="button" onClick="add(this);" value="버튼만들기">
+        </div>
+        <!-- <input type="button" onClick="del(this);" value="삭제1"> -->
+    </body>
+</html>

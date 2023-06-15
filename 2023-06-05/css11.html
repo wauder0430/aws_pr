@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>가상 선택자 연습</title>
+        <style>
+            /* 선택자 : 선택자 */
+            a {
+                color : black;
+            }
+            a:visited {
+                color : green;
+            }
+            a:hover {
+                color : silver;
+                background-color: black;
+            }
+            input:focus {
+                background-color: aqua;
+            }
+
+            /* ul자식들중에 2번째인 객체 */
+            /* >를 빼면 자손들중에  */
+            ul > :nth-child(2){
+                color:orangered;
+            }
+            /* odd홀수 even짝수 */
+            ul :nth-child(odd) {
+                color :skyblue;
+            }
+            ul :nth-child(even) {
+                color : plum;
+            }
+            ul :nth-last-child(1) {
+                color : lightgreen;
+            }
+            table tr:nth-child(2) {
+                color : lightcoral;
+            }
+            table td:nth-child(2) {
+                color : lightcoral;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://naver.com">네이버</a><br>
+        <a href="https://google.com">구글</a><br>
+        <a href="css10.html">css10.html</a><br>
+        <input type="text" name="uName" value="홍길동"><br>
+        <input type="number" name="age" value="30"><br>
+        <ul>
+            <li>1st
+                <ol>
+                    <li>1st</li>
+                    <li>2nd</li>
+                    <li>3rd</li>
+                </ol>
+            </li>
+            <li>2nd</li>
+            <li>3rd</li>
+            <li>4th</li>
+            <li>5th</li>
+        </ul>
+        <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+        </table>
+    </body>
+</html>

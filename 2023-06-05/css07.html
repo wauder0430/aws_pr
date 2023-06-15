@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>태그 선택자</title>
+        <!-- 클래스 선택자는 태그에 속성으로 클래스 이름이
+        명시된 태그에 일괄 적용된다.  -->
+        <style>
+            /*  */
+            .my_color_red {
+                background-color:lightyellow;
+                color:red;
+                font-size:30pt;
+            }
+            .my_color_blue {
+                color:blue;
+                background-color:bisque;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            /* 클래스 여러 공동되는 속성을 가진 객체를 추상화 한 것 */
+            a.btn {
+                font-size:14pt;
+                line-height:17px;
+                text-align: center;
+                vertical-align: middle;
+                height: auto;
+                text-decoration:none; 
+                padding: 6px 10px;     
+            }
+
+            a.btn.red { background-color: #f90000; }
+            a.btn.gray { background-color: #788090; }
+            a.btn.green { background-color: #00efa6; }
+            
+        </style>
+    </head>
+    <body>
+        <p>이것은 문단입니다.</p>
+        <p class="my_color_red">이것은 문단입니다.</p>
+        <p class="my_color_blue">이것은 문단입니다.</p>
+        <span>이것은 공간분할 명령입니다.</span>
+        <span class="my_color_blue">이것은 공간분할 명령입니다.</span>
+        <h3>이것은 제목입니다.</h3>
+        <h3 class="my_color_red">이것은 제목입니다.</h3>
+        <a href="" class="btn red">버튼</a>
+        <p class="btn">버튼이 되나요?</p>
+        <table>
+            <tr>
+                <td>이것은 테이블입니다.</td>
+            </tr>
+        </table>
+    </body>
+</html>
