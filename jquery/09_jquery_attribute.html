@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JQ 속성변경</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // 문서가 준비되었을 때, 고양이 이미지를 띄움
+                // 속성값 변경시 $().attr("속성명","속성값");
+                // 속성값을 가져올 때  $().attr("속성명");
+                $("#myImg").attr("src","./img/cat.jpg");
+
+                // $("#myImg") 마우스 커서를 올리면 그림 폭을 살짝 늘리고
+                // 커서가 나오면 원상태로 되돌림
+
+                $("#myImg")
+                .mouseover(function(){
+                    $(this).attr("width","300px");
+                })
+                .mouseout(function(){
+                    $(this).attr("width","200px");
+                });
+            });
+
+            function ChangeImg(img) {
+                // 이미지가 강아지면 고양이로 바꾸고
+                // 고양이면 강아지로 바꿈
+                if($("#myImg").attr("src") == "./img/dog.jpg"){
+                    $("#myImg").attr("src","./img/cat.jpg");
+                } else {
+                    $("#myImg").attr("src","./img/dog.jpg");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <img src="" width="200px"; id="myImg" onclick="ChangeImg(this);">
+    </body>
+</html>

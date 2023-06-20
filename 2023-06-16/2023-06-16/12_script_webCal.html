@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>계산기</title>
+        <link rel="stylesheet" href="./css/cal.css">
+        <script src="./js/cal.js"></script>
+        <script src="./js/control.js"></script>
+        <script src="./js/functionbtn.js"></script>
+        <script src="./js/log.js"></script>
+    </head>
+    <body>
+        <!-- 
+            계산기 UI는 좌측에 계산기 영역과 우측의 기록 영역으로 나뉨
+            좌측의 계산기 영역은 첫줄에 계산식 영역
+            둘째줄에 숫자 영역 셋째줄부터 버튼
+            버튼 갯수에 맞춰 줄수가 정해짐
+            
+            원하는 기능 
+            1. 숫자 버튼으로 숫자 입력
+            2. 연산자 버튼으로 연산자 입력
+            3. 연산자 입력후 두번째 입력
+            4. '='버튼 입력으로 계산 수행
+            5. 연산자는 사칙연산만 수행
+         -->
+        <input type="number" id="num1"><br>
+        <input type="text" id="op"><br>
+        <input type="number" id="num2">
+        <table border="1" style="margin: auto;">
+            <tr>
+                <td colspan=4>
+                    <div class="calculate_msg">계산식영역</div>
+                </td>
+                <td rowspan=7 class="log_box">
+                    <div class="log_list">아직기록이없음</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=4>
+                    <div class="display">숫자영역</div>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" class="btn"></td>
+                <td><input type="button" value="-" class="btn"></td>
+                <td><input type="button" value="×" class="btn"></td>
+                <td><input type="button" value="÷" class="btn"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" class="btn"></td>
+                <td><input type="button" value="8" class="btn"></td>
+                <td><input type="button" value="9" class="btn"></td>
+                <td><input type="button" value="《" class="btn"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" class="btn"></td>
+                <td><input type="button" value="5" class="btn"></td>
+                <td><input type="button" value="6" class="btn"></td>
+                <td><input type="button" value="C" class="btn"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" class="btn"></td>
+                <td><input type="button" value="2" class="btn"></td>
+                <td><input type="button" value="3" class="btn"></td>
+                <td><input type="button" value="D" class="btn"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+/-" class="btn"></td>
+                <td><input type="button" value="0" class="btn"></td>
+                <td><input type="button" value="." class="btn"></td>
+                <td><input type="button" value="=" class="btn"></td>
+            </tr>
+        </table>
+    </body>
+</html>

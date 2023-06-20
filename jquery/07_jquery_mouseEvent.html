@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JQ event</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // 마우스 커서가 객체에 들어오면, 배경색을 바꿈
+                // 마우스 커서가 객체에서 나가면, 배경색을 되돌림
+
+                $("div").mouseover(function(){
+                    $(this).css("background-color","greenyellow");
+                });
+                $("div").mouseout(function(){
+                    $(this).css("background-color","");
+                });
+
+                // 같은 객체에 여러 이벤트를 작성하고자 할때에는
+                // 연달아서 작성 후 마지막에만 ; 표시
+                $("#myDIV")
+                .click(function(){
+                    $(this).html("클릭되었습니다.");
+                })
+                .mouseover(function(){
+                    $(this).html("커서가 들어왔습니다.");
+                })
+                .mouseout(function(){
+                    $(this).html("커서가 나갔습니다.");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>Click me</div>
+        <div id="myDIV">myDIV</div>
+        <div>Click me</div>
+        <div>Click me</div>
+        <div>Click me</div>
+    </body>
+</html>

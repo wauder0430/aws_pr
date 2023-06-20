@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>submit_JQ</title>
+        <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            // window.onload = function() {
+                // js방식1
+                // let id_form = document.querySelector("#uid");
+                // id_form.focus();
+                // //document.querySelector("#uid").focus();
+                // //각종 이벤트에 대한 함수 작성
+                // id_form.onblur = function() {
+                //     alert("입력값 : " + id_form.value);
+
+                // }
+            // }
+            // jquery 방식
+            $(document).ready(function(){
+                // 객체의 포커스를 이동시킴
+                $("#uid").focus();
+                // 객체가 포커스를 잃었을때 
+                /*$("#uid").blur(function(){
+                    alert($("#uid").val());
+                }); */
+                // "버튼", "submit"을 누르면, id와 pw입력을 확인하여
+                // msg_box의 '아이디를 입력하세요', '비번을 입력하세요'를 출력하거나
+                // form을 submit시킴
+
+                // $(식별자).html("문자열");
+                // $(식별자).css("속성명","속성값");
+                // input 값의 호출 : $(식별자).val();
+                // confirm("메시지"); --> 사용자에게 예 아니오를 입력받음
+                /* if(confirm("로그인 하시겠습니까?") != 1){
+                    console.log("submit중단");
+                    return flase;
+                }
+                */
+            });
+
+            let submitflag = false;
+
+            function login_btn() {
+                if(submitflag == true) { return; } 
+
+                if($("#uid").val() == ""){
+                    $("#uid").focus();
+                    $(".msg_box").html("아이디를 입력하세요");
+                    $(".msg_box").css("color", "red");
+                    return false;
+                }
+                if($("#upw").val() == ""){
+                    $("#upw").focus();
+                    $(".msg_box").html("비밀번호를 입력하세요");
+                    $(".msg_box").css("color", "red");
+                    return false;
+                }
+                if(confirm("로그인 하시겠습니까?") != 1){
+                    $("#login")[0].reset(); // 리셋
+                    alert("로그인 취소");
+                    return false;
+                } else{
+                // submit으로 요청받은 경우 무한 재귀 현상 방지
+                submitflag = true;
+                $("#login").submit();
+                }   
+                return true;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <!-- form영역 서브밋이 일어나면 login.html에 get방식으로 데이터 전송 -->
+        <form action="login.html" method="get" id="login" name="login" onsubmit="return login_btn();">
+            <label for="uid">아이디 : </label>
+            <input type="text" id="uid"><br>
+            <label for="upw">비번 : </label>
+            <input type="password" id="upw"><br>
+            <span class="msg_box"></span>
+            <br>
+            <input type="button" value="버튼" onclick="login_btn();">
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+}
+.btn{
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    border: 2px solid gray;
+    background-color: silver;
+}
+/* .btn:hover{
+    background-color: aliceblue; //onmouse와 충돌로 인해 따로 js로 처리함
+} */
+.calculate_msg, .display{
+    height: 3rem;
+    font-size: 2rem;
+    text-align: right;
+}
+
+.log_box{
+    width:20rem;
+    vertical-align: top;
+}

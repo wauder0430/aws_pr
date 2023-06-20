@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>선택자</title>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // 전체 선택자
+                $("*").css("color", "gray");
+                // tag name선택자
+                $("h3").css("font-size", "5rem");
+                // class 선택자
+                $(".myClass").css("background-color", "beige");
+                // ID 선택자
+                $("#myID").html("ID로 선택됐습니다.");
+                // 가상 선택자
+                $("li:last").css("color", "orange");
+                $("li:odd()").css("color", "orange");
+                $("li:even()").css("color", "greenyellow")
+                // 복수 객체 선택
+                $(".myClass, .yourClass").html("여러 객체를 선택했습니다.");
+                // 자손 선택자
+                $("ul .myClass").css("font-size", "3rem");
+                $("ul .myClass").html("7th");
+            });
+        </script>
+    </head>
+    <body>
+        <span class="yourClass">span입니다.</span>
+        <hr>
+        <span class="myClass">span입니다.</span>
+        <h3>h3입니다.</h3>
+        <ul>
+            <li>1st</li>
+            <li id="myID">2nd</li>
+            <li>3rd</li>
+            <li>4th</li>
+        </ul> 
+        <ul>
+            <li>5th</li>
+            <li>6th</li>
+            <li class="myClass">7th</li>
+            <li>8th</li>
+        </ul> 
+    </body>
+</html>

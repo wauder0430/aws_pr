@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>함수호출</title>
+		<script>
+			// JS로 작성한 이벤트 리스너
+			window.onload = function()
+			{
+				let id_form = document.querySelector("#uid");
+				id_form.focus();
+				// 각종 이벤트에 대한 익명함수 작성
+				// id_form.onblur = function() {
+				// 	alert("입력값 : "+id_form.value);
+				//}
+			}
+
+			// submit시 입력값의 유효성 체크 함수
+			function CheckVal() {
+				// 선언 및 초기화
+				let user_id = document.querySelector("#uid");
+				let user_pw = document.querySelector("#upw");
+				let msg_box = document.querySelector(".msg_box");
+				// id 값 확인
+				if(user_id.value == ""){
+					msg_box.innerHTML = "아이디를 입력하세요";
+					msg_box.style.color = "red";
+					user_id.focus();
+					return false;
+				}
+				// pw 값 확인
+				if(user_pw.value == ""){
+					msg_box.innerHTML = "비번을 입력하세요";
+					msg_box.style.color = "red";
+					user_pw.focus();
+					return false;
+				}
+				if(confirm("로그인 하시겠습니까?") !=1 ){
+					alert("취소하셨습니다");
+					return false;
+				}
+				document.login.submit();
+				return true;
+			}
+		</script>
+	</head>
+	<body>
+		<!-- form 영역 서브밋이 일어나면 login.html에 get 방식으로 데이터 전송 -->
+		<form action="login.html" method="get" id="login" name="login" onsubmit="return CheckVal();">
+			<label for="uid">아이디 : </label>
+			<input type="text" id="uid"><br>
+			<label for="upw">비번 : </label>
+			<input type="password" id="upw"><br>
+			<span class="msg_box"></span>
+			<br>
+			<input type="button" value="버튼" onclick="CheckVal();">
+			<input type="submit" value="submit">
+		</form>
+	</body>
+</html>
